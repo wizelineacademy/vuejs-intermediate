@@ -21,6 +21,7 @@ export default {
 
   methods: {
     onSelect (e) {
+      console.log('selected option', e.target.value)
       // TODO create custom v-model
     }
   }
