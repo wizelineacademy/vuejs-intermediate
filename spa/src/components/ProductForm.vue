@@ -35,9 +35,9 @@ import FormField from './FormField'
 import FormSelect from './FormSelect'
 
 const quantityOptions = [
-  {value: 1, label: 'Buy 1'},
-  {value: 2, label: 'Buy 2'},
-  {value: 3, label: 'Buy 3'}
+  {value: '1', label: 'Buy 1'},
+  {value: '2', label: 'Buy 2'},
+  {value: '3', label: 'Buy 3'}
 ]
 const colorOptions = [
   {value: 'black', label: 'Black'},
