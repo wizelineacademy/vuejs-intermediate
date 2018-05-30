@@ -6,36 +6,36 @@
         <div class="tile is-parent">
           <div class="tile is-child box">
             <img src="~/assets/black-toner.jpg" alt="black toner">
-            <a class="button details-button is-info" href="/shop/toner/black">
+            <nuxt-link class="button details-button is-info" to="/shop/toner/black">
               Details
-            </a>
+            </nuxt-link>
           </div>
         </div>
 
         <div class="tile is-parent">
           <div class="tile is-child box">
             <img src="~/assets/cyan-toner.jpg" alt="cyan toner">
-            <a class="button details-button is-info" href="/shop/toner/cyan">
+            <nuxt-link class="button details-button is-info" to="/shop/toner/cyan">
               Details
-            </a>
+            </nuxt-link>
           </div>
         </div>
 
         <div class="tile is-parent">
           <div class="tile is-child box">
             <img src="~/assets/magenta-toner.jpg" alt="magenta toner">
-            <a class="button details-button is-info" href="/shop/toner/magenta">
+            <nuxt-link class="button details-button is-info" to="/shop/toner/magenta">
               Details
-            </a>
+            </nuxt-link>
           </div>
         </div>
 
         <div class="tile is-parent">
           <div class="tile is-child box">
             <img src="~/assets/yellow-toner.jpg" alt="yellow toner">
-            <a class="button details-button is-info" href="/shop/toner/yellow">
+            <nuxt-link class="button details-button is-info" to="/shop/toner/yellow">
               Details
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>
