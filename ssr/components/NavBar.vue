@@ -1,24 +1,24 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <nuxt-link class="navbar-item" to="/">
         1D Printer
-      </a>
+      </nuxt-link>
     </div>
 
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="/shop">
+        <nuxt-link class="navbar-item" to="/shop">
           Toner store
-        </a>
+        </nuxt-link>
       </div>
 
       <div class="navbar-end">
         <div class="navbar-item">
-          <a href="/shop">
+          <nuxt-link to="/shop">
             <img src="~/assets/cart-icon.png">
             <span>0 items</span>
-          </a>
+          </nuxt-link>
         </div>
       </div>
     </div>
