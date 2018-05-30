@@ -4,7 +4,7 @@ A course brought to you by Eder Díaz and Wizeline Academy
 
 ### Description
 
-This course will run through three scenarios that will be solved using Vue.
+This course will run through two scenarios that will be solved using Vue.
 
 To run each project you need to go into it with the terminal and run 
 

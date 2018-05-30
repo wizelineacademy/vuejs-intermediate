@@ -1,8 +1,0 @@
-# Distribution files linking 
-<script src="./dist/static/js/manifest.2ae2e69a05c33dfc65f8.js"></script>
-<script src="./dist/static/js/vendor.625b8ebb5e7fc8e764bb.js"></script>
-<script src="./dist/static/js/app.faf30154cbda8fd7ab4b.js"></script>
-
-# vue and axios cdn
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
