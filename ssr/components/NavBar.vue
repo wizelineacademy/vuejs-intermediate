@@ -11,9 +11,6 @@
         <a class="navbar-item" href="/shop">
           Toner store
         </a>
-        <a class="navbar-item" href="/joke">
-          Jokes
-        </a>
       </div>
 
       <div class="navbar-end">

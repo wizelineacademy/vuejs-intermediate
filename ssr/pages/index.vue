@@ -5,11 +5,9 @@
 </template>
 
 <script>
-
 // pages
 // -- home
 // -- buy
-// -- joke
 // -- shop
 // ||-- toner
 //   ||-- black
