@@ -1,9 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <PageNavigation />
     <router-view />
+    <PageFooter />
   </div>
 </template>
+
+<script>
+import PageNavigation from '@/components/PageNavigation.vue';
+import PageFooter from '@/components/PageFooter.vue';
+
+export default {
+  components: {
+    PageNavigation,
+    PageFooter,
+  },
+};
+</script>

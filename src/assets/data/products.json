@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Black Toner",
+        "picture": "black-toner.jpg",
+        "price": 10,
+        "description": "I like my printed lines just like my coffee"
+    },
+    {
+        "id": 2,
+        "name": "Cyan Toner",
+        "picture": "cyan-toner.jpg",
+        "price": 10,
+        "description": "The sky has envy of those lines color"
+    },
+    {
+        "id": 3,
+        "name": "Magenta Toner",
+        "picture": "magenta-toner.jpg",
+        "price": 10,
+        "description": "Just like printing with grape juice"
+    },
+    {
+        "id": 4,
+        "name": "Yellow Toner",
+        "picture": "yellow-toner.jpg",
+        "price": 10,
+        "description": "You can print a submarine for insects"
+    }
+]
