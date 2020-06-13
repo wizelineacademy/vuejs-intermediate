@@ -1,17 +1,41 @@
-# Vue.js intermediate
+# 1dprinter
 
-A course brought to you by Eder Díaz and Wizeline Academy
+A [Vue CLI](https://cli.vuejs.org/) project with [TailwindCSS](https://tailwindcss.com/)
 
-### Description
+For more info on how tailwind was set up click [here](https://markus.oberlehner.net/blog/setting-up-tailwind-css-with-vue/).
 
-This course will run through two scenarios that will be solved using Vue.
+Base page layout generated from [stitches](https://stitches.hyperyolo.com/).
 
-To run each project you need to go into it with the terminal and run 
+## Project setup
 
-```npm i```
+```
+npm install
+```
 
-then 
+### Compiles and hot-reloads for development
 
-```npm run dev```
+```
+npm run serve
+```
 
-to run the dev server
+### Compiles and minifies for production
+
+```
+npm run build
+```
+
+### Run your unit tests
+
+```
+npm run test:unit
+```
+
+### Lints and fixes files
+
+```
+npm run lint
+```
+
+### Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).
