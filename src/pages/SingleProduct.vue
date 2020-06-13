@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container min-h-screen">
     <router-link :to="pages.PRODUCTS">
       ← Back to Products
     </router-link>

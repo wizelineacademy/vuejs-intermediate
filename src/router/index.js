@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 export const pages = {
   HOME: '/',
-  BUY: '/buy',
+  CHECKOUT: '/checkout',
   PRODUCTS: '/products',
   SINGLE_PRODUCT: '/product',
   ERROR: '/404',
@@ -19,12 +19,12 @@ const routes = [
     component: Home,
   },
   {
-    path: pages.BUY,
-    name: 'Buy',
+    path: pages.CHECKOUT,
+    name: 'Checkout',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when visiting the route.
-    component: () => import(/* webpackChunkName: "about" */ '../pages/About.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../pages/Checkout.vue'),
   },
   {
     path: pages.PRODUCTS,

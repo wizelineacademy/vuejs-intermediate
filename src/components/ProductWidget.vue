@@ -38,6 +38,7 @@
 
 <script>
 import { pages } from '@/router';
+import { mapActions } from 'vuex';
 
 export default {
   props: {
@@ -81,8 +82,11 @@ export default {
     },
   },
   methods: {
+    ...mapActions({
+      addItemToCart: 'addItemToCart',
+    }),
     addToCart() {
-      // TODO: add to store cart
+      this.addItemToCart(this.id);
     },
   },
 };

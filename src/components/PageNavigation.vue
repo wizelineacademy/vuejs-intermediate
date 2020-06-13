@@ -17,9 +17,9 @@
     </ul>
     <ul class="text-sm text-gray-700 list-none p-0 flex items-center">
       <li>
-        <router-link :to="pages.BUY">
+        <router-link :to="pages.CHECKOUT">
           <button class="bg-black hover:bg-text-gray-800 text-white ml-4 py-2 px-3">
-            Buy
+            Checkout ({{ cartItems }})
           </button>
         </router-link>
       </li>
@@ -29,12 +29,18 @@
 
 <script>
 import { pages } from '@/router';
+import { mapGetters } from 'vuex';
 
 export default {
   data() {
     return {
       pages,
     };
+  },
+  computed: {
+    ...mapGetters({
+      cartItems: 'numberOfItemsInCart',
+    }),
   },
 };
 </script>

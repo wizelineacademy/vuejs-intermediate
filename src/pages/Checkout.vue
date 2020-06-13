@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="min-h-screen">
     <form class="font-sans text-sm rounded w-full max-w-md mx-auto my-8 px-8 pt-6 pb-8">
       <div class="relative border rounded mb-4 shadow appearance-none label-floating">
         <input
