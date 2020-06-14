@@ -10,6 +10,7 @@ export const pages = {
   PRODUCTS: '/products',
   SINGLE_PRODUCT: '/product',
   ERROR: '/404',
+  THANKS: '/thanks',
 };
 
 const routes = [
@@ -35,6 +36,11 @@ const routes = [
     path: `${pages.SINGLE_PRODUCT}/:id`,
     name: 'Product',
     component: () => import(/* webpackChunkName: "store" */ '../pages/SingleProduct.vue'),
+  },
+  {
+    path: `${pages.THANKS}`,
+    name: 'Thanks',
+    component: () => import(/* webpackChunkName: "thanks" */ '../pages/Thanks.vue'),
   },
   {
     path: pages.ERROR,

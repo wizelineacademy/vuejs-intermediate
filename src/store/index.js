@@ -13,7 +13,7 @@ export default new Vuex.Store({
       context.dispatch('saveCart');
     },
     removeItemFromCart(context, productId) {
-      context.commit('addToItemsInCart', productId);
+      context.commit('removeItemFromCart', productId);
       context.dispatch('saveCart');
     },
     saveCart(context) {
@@ -26,14 +26,17 @@ export default new Vuex.Store({
         context.commit('replaceCartItems', items);
       }
     },
+    clearCart: (context) => {
+      context.commit('replaceCartItems', []);
+      context.dispatch('saveCart');
+    },
   },
   mutations: {
     addToItemsInCart(state, productId) {
       state.itemsInCart.push(productId);
     },
     removeItemFromCart(state, productId) {
-      const indexToRemove = state.itemsInCart.indexOf(productId);
-      state.itemsInCart.splice(indexToRemove, 1);
+      state.itemsInCart = state.itemsInCart.filter((item) => item !== productId);
     },
     replaceCartItems(state, newItems) {
       state.itemsInCart = newItems;
