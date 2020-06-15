@@ -1,6 +1,7 @@
 <template>
-  <table class="bg-white mb-6 m-auto">
-    <tr v-for="item in itemsWithProductData" :key="item.id">
+  <LoadingAnimation v-if="loading" />
+  <table v-else class="bg-white mb-6 m-auto">
+    <tr v-for="item in itemsWithTotals" :key="item.id">
       <td class="border px-8 py-4">{{ item.name }}</td>
       <td class="border px-8 py-4">{{ item.quantity }} x {{ item.price }}</td>
       <td class="border px-8 py-4">{{ item.priceTotal }}</td>
@@ -23,29 +24,40 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import products from '@/assets/data/products.json';
+import LoadingAnimation from '@/components/LoadingAnimation.vue';
 
 export default {
+  components: {
+    LoadingAnimation,
+  },
+  data() {
+    return {
+      loading: true,
+    };
+  },
+  async mounted() {
+    await this.fetchProducts();
+    this.loading = false;
+  },
   computed: {
     ...mapGetters({
       itemsInCartById: 'itemsInCartById',
     }),
-    itemsWithProductData() {
+    itemsWithTotals() {
       const productIds = Object.keys(this.itemsInCartById);
+
       return productIds.map((productId) => {
-        const quantity = this.itemsInCartById[productId];
-        const productData = this.productById(productId);
+        const item = this.itemsInCartById[productId];
         return {
-          ...productData,
-          quantity,
-          priceTotal: quantity * productData.price,
+          ...item,
+          priceTotal: item.quantity * item.price,
         };
       });
     },
     grandTotal() {
       let result = 0;
-      this.itemsWithProductData.forEach((product) => {
-        result += product.priceTotal;
+      this.itemsWithTotals.forEach((item) => {
+        result += item.priceTotal;
       });
       return result;
     },
@@ -53,11 +65,8 @@ export default {
   methods: {
     ...mapActions({
       removeItemFromCart: 'removeItemFromCart',
+      fetchProducts: 'fetchProducts',
     }),
-    productById(productId) {
-      const idAsNumber = parseInt(productId, 10);
-      return products.find((product) => product.id === idAsNumber);
-    },
   },
 };
 </script>

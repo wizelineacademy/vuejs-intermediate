@@ -7,6 +7,9 @@
       What our happy customers say about 1D Printer
     </h1>
     <hr class="border-b w-8 m-auto my-6" />
+
+    <LoadingAnimation v-if="loading" />
+
     <div class="flex flex-wrap justify-between items-start">
       <SingleTestimonial
         v-for="client in clients"
@@ -20,43 +23,26 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SingleTestimonial from '@/components/SingleTestimonial.vue';
-
-const clients = [
-  {
-    id: 1,
-    name: 'Jhon Doe',
-    picture: 'jhon.jpg',
-    description: 'Best product ever!!!1!',
-  },
-  {
-    id: 2,
-    name: 'Peter Parker',
-    picture: 'peter.jpg',
-    description: 'No more curved lines, thanks 1D Printer.',
-  },
-  {
-    id: 3,
-    name: 'Bruce Wayne',
-    picture: 'bruce.jpg',
-    description: 'This printer has the darkest lines ever!',
-  },
-  {
-    id: 4,
-    name: 'Simple Rick',
-    picture: 'rick.jpg',
-    description: "I love 1D Printer, I don't want the complexity of 2D and 3D printers.",
-  },
-];
+import LoadingAnimation from '@/components/LoadingAnimation.vue';
 
 export default {
   components: {
     SingleTestimonial,
+    LoadingAnimation,
   },
   data() {
     return {
-      clients,
+      clients: [],
+      loading: true,
     };
+  },
+  async mounted() {
+    const clientsApiUrl = 'https://api.jsonbin.io/b/5ee6a84319b60f7aa95a1319';
+    const clientsApiResponse = await axios.get(clientsApiUrl);
+    this.clients = clientsApiResponse.data;
+    this.loading = false;
   },
 };
 </script>
