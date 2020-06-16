@@ -63,20 +63,5 @@ export default {
       fetchProducts: 'fetchProducts',
     }),
   },
-  // beforeRouteEnter(to, from, next) {
-  //   const productId = parseInt(to.params.id, 10);
-  //   const foundProduct = products.find((product) => product.id === productId);
-  //   if (foundProduct) {
-  //     next((component) => {
-  //       // we don't have access to the "this" here
-  //       // so we need to modify directly the component instance
-
-  //       // eslint-disable-next-line no-param-reassign
-  //       component.product = foundProduct;
-  //     });
-  //   } else {
-  //     next(pages.ERROR);
-  //   }
-  // },
 };
 </script>
