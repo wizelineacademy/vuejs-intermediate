@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.label-floating input:not(:placeholder-shown) {
+  padding-top: 1.4rem;
+}
+.label-floating input:not(:placeholder-shown) ~ label {
+  padding-top: 0.4rem;
+  font-size: 0.7rem;
+  transition: all 0.1s ease-in-out;
+  color: #8795a1;
+}
+
+.label-floating select:not(:placeholder-shown) {
+  padding-top: 1.4rem;
+}
+.label-floating select:not(:placeholder-shown) ~ label {
+  padding-top: 0.4rem;
+  font-size: 0.7rem;
+  transition: all 0.1s ease-in-out;
+  color: #8795a1;
+}
