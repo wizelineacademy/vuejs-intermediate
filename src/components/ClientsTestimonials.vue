@@ -40,7 +40,7 @@ export default {
     };
   },
   async mounted() {
-    const testimonialsUrl = 'https://api.jsonbin.io/b/5ee82fab19b60f7aa95af952/fsdg';
+    const testimonialsUrl = 'https://api.jsonbin.io/b/5ee82fab19b60f7aa95af952';
     const testimonialsResponse = await axios.get(testimonialsUrl).catch((error) => {
       console.error('ClientsTestimonials:: Error fetching url:', testimonialsUrl);
       console.error(' - Error:', error);
