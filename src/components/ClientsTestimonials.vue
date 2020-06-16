@@ -1,5 +1,5 @@
 <template>
-  <section class="font-sans container m-auto text-center py-8">
+  <section v-if="!error" class="font-sans container m-auto text-center py-8">
     <label for="tagline" class="uppercase tracking-wide font-bold text-gray-700">
       Clients Testimonials
     </label>
@@ -36,11 +36,17 @@ export default {
     return {
       clients: [],
       loading: true,
+      error: false,
     };
   },
   async mounted() {
     const clientsApiUrl = 'https://api.jsonbin.io/b/5ee82fab19b60f7aa95af952';
-    const clientsApiResponse = await axios.get(clientsApiUrl);
+    const clientsApiResponse = await axios.get(clientsApiUrl).catch((error) => {
+      console.error('ClientsTestimonials:: Error fetching url:', clientsApiUrl);
+      console.error(' - Error:', error);
+      this.error = true;
+      return { data: [] };
+    });
     this.clients = clientsApiResponse.data;
     this.loading = false;
   },
