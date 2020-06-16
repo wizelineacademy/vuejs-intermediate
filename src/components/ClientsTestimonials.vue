@@ -12,7 +12,7 @@
 
     <div class="flex flex-wrap justify-between items-start">
       <SingleTestimonial
-        v-for="client in clients"
+        v-for="client in first4Clients"
         :key="client.id"
         :name="client.name"
         :picture="client.picture"
@@ -39,10 +39,15 @@ export default {
     };
   },
   async mounted() {
-    const clientsApiUrl = 'https://api.jsonbin.io/b/5ee6a84319b60f7aa95a1319';
+    const clientsApiUrl = 'https://api.jsonbin.io/b/5ee82fab19b60f7aa95af952';
     const clientsApiResponse = await axios.get(clientsApiUrl);
     this.clients = clientsApiResponse.data;
     this.loading = false;
+  },
+  computed: {
+    first4Clients() {
+      return this.clients.filter((client, index) => index < 4);
+    },
   },
 };
 </script>
