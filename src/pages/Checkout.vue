@@ -1,6 +1,6 @@
 <template>
   <div v-if="hasProducts" class="min-h-screen">
-    <CheckoutTable />
+    <CheckoutTableProvider />
     <form
       @submit.prevent="submitOrder"
       class="font-sans text-sm rounded w-full max-w-md mx-auto my-8 px-8 pt-6 pb-8"
@@ -39,7 +39,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 import { pages } from '@/router';
-import CheckoutTable from '@/components/CheckoutTable.vue';
+import CheckoutTableProvider from '@/components/CheckoutTableProvider.vue';
 import FormInput from '@/components/FormInput.vue';
 import emailValidator from '@/validators/emailValidator';
 import phoneValidator from '@/validators/phoneValidator';
@@ -47,7 +47,7 @@ import phoneValidator from '@/validators/phoneValidator';
 export default {
   name: 'Checkout',
   components: {
-    CheckoutTable,
+    CheckoutTableProvider,
     FormInput,
   },
   data() {

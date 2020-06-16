@@ -39,6 +39,7 @@
 <script>
 import { pages } from '@/router';
 import { mapActions } from 'vuex';
+import toUSD from '@/filters/toUSD';
 
 export default {
   props: {
@@ -77,9 +78,7 @@ export default {
     };
   },
   filters: {
-    toUSD(value) {
-      return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-    },
+    toUSD,
   },
   methods: {
     ...mapActions({
