@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   props: {
     id: {
@@ -70,8 +72,11 @@ export default {
   },
   methods: {
     addToCart() {
-      console.log('TODO add to cart this item');
+      this.addItemToCart(this.id);
     },
+    ...mapActions({
+      addItemToCart: 'addItemToCart',
+    }),
   },
 };
 </script>

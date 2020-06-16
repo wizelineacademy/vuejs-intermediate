@@ -19,7 +19,7 @@
       <li>
         <router-link to="/checkout">
           <button class="bg-black hover:bg-text-gray-800 text-white ml-4 py-2 px-3">
-            Checkout (0)
+            Checkout ({{ numberOfItemsInCart }})
           </button>
         </router-link>
       </li>
@@ -28,5 +28,13 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from 'vuex';
+
+export default {
+  computed: {
+    ...mapGetters({
+      numberOfItemsInCart: 'numberOfItemsInCart',
+    }),
+  },
+};
 </script>

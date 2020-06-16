@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapActions, mapState } from 'vuex';
 import ProductWidget from '@/components/ProductWidget.vue';
 import LoadingAnimation from '@/components/LoadingAnimation.vue';
 
@@ -29,16 +29,21 @@ export default {
   data() {
     return {
       loading: true,
-      products: [],
     };
   },
   async mounted() {
-    const productsUrl = 'https://api.jsonbin.io/b/5ee6a8670e966a7aa3696b76';
-    const productResponse = await axios.get(productsUrl);
-    this.products = productResponse.data;
+    await this.fetchProducts();
     this.loading = false;
   },
+  methods: {
+    ...mapActions({
+      fetchProducts: 'fetchProducts',
+    }),
+  },
   computed: {
+    ...mapState({
+      products: 'products',
+    }),
     productsWithAlignment() {
       return this.products.map((product, index) => {
         const isOdd = index % 2 !== 0;
