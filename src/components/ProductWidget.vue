@@ -15,18 +15,18 @@
         <label for="tagline" class="uppercase tracking-wide text-gray-700 font-bold">
           {{ name }}
         </label>
-        <h1 class="my-4 font-normal">{{ price | toUSD }}</h1>
+        <h1 class="my-4 font-normal">{{ price }}</h1>
         <p v-if="description" class="leading-normal mb-4 text-gray-700">
           {{ description }}
         </p>
       </div>
     </div>
 
-    <router-link v-if="showDetailsButton" :to="`${pages.SINGLE_PRODUCT}/${id}`">
+    <a v-if="showDetailsButton" :href="`product/${id}`">
       <button class="w-1/2 bg-white border border-solid border-black text-black py-2 px-4">
         Details
       </button>
-    </router-link>
+    </a>
     <button
       @click="addToCart"
       class="w-1/2 bg-black border border-solid border-black text-white py-2 px-4"
@@ -37,10 +37,6 @@
 </template>
 
 <script>
-import { pages } from '@/router';
-import { mapActions } from 'vuex';
-import toUSD from '@/filters/toUSD';
-
 export default {
   props: {
     id: {
@@ -72,20 +68,9 @@ export default {
       default: true,
     },
   },
-  data() {
-    return {
-      pages,
-    };
-  },
-  filters: {
-    toUSD,
-  },
   methods: {
-    ...mapActions({
-      addItemToCart: 'addItemToCart',
-    }),
     addToCart() {
-      this.addItemToCart(this.id);
+      console.log('TODO add to cart this item');
     },
   },
 };

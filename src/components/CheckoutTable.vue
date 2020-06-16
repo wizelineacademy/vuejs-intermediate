@@ -2,8 +2,8 @@
   <table class="bg-white mb-6 m-auto">
     <tr v-for="item in itemsWithTotals" :key="item.id">
       <td class="border px-8 py-4">{{ item.name }}</td>
-      <td class="border px-8 py-4">{{ item.quantity }} x {{ item.price | toUSD }}</td>
-      <td class="border px-8 py-4">{{ item.priceTotal | toUSD }}</td>
+      <td class="border px-8 py-4">{{ item.quantity }} x {{ item.price }}</td>
+      <td class="border px-8 py-4">{{ item.priceTotal }}</td>
       <td class="border px-8 py-4">
         <button
           data-test="deleteButton"
@@ -18,19 +18,14 @@
       <td class="bg-blue-100 border text-left px-8 py-4">Grand Total</td>
       <td class="bg-blue-100 border text-left px-8 py-4"></td>
       <td data-test="grandTotal" class="bg-blue-100 border text-left px-8 py-4">
-        {{ grandTotal | toUSD }}
+        {{ grandTotal }}
       </td>
     </tr>
   </table>
 </template>
 
 <script>
-import toUSD from '@/filters/toUSD';
-
 export default {
-  filters: {
-    toUSD,
-  },
   props: {
     itemsInCartById: {
       type: Object,

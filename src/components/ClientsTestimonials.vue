@@ -8,46 +8,23 @@
     </h1>
     <hr class="border-b w-8 m-auto my-6" />
 
-    <LoadingAnimation v-if="loading" />
+    <LoadingAnimation />
 
     <div class="flex flex-wrap justify-between items-start">
-      <SingleTestimonial
-        v-for="client in first4Clients"
-        :key="client.id"
-        :name="client.name"
-        :picture="client.picture"
-        :description="client.description"
-      />
+      <SingleTestimonial name="Fake Person" picture="jhon.jpg" description="lorem ipsum dolor" />
     </div>
   </section>
 </template>
 
 <script>
-import axios from 'axios';
 import SingleTestimonial from '@/components/SingleTestimonial.vue';
 import LoadingAnimation from '@/components/LoadingAnimation.vue';
+// testimonials data is at https://api.jsonbin.io/b/5ee82fab19b60f7aa95af952
 
 export default {
   components: {
     SingleTestimonial,
     LoadingAnimation,
-  },
-  data() {
-    return {
-      clients: [],
-      loading: true,
-    };
-  },
-  async mounted() {
-    const clientsApiUrl = 'https://api.jsonbin.io/b/5ee82fab19b60f7aa95af952';
-    const clientsApiResponse = await axios.get(clientsApiUrl);
-    this.clients = clientsApiResponse.data;
-    this.loading = false;
-  },
-  computed: {
-    first4Clients() {
-      return this.clients.filter((client, index) => index < 4);
-    },
   },
 };
 </script>

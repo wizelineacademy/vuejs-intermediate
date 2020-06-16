@@ -3,56 +3,26 @@
     <h1 class="text-center uppercase tracking-wide font-bold text-gray-700">
       Our 1D Printer Products
     </h1>
-    <LoadingAnimation v-if="loading" />
+    <LoadingAnimation />
     <ProductWidget
-      v-for="product in productsWithAlignment"
-      :key="product.id"
-      :id="product.id"
-      :name="product.name"
-      :price="product.price"
-      :picture="product.picture"
-      :right-side-picture="product.alignRight"
+      :id="1"
+      name="1D Printer"
+      :price="500"
+      picture="printer.jpg"
+      :right-side-picture="false"
     />
   </div>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
 import ProductWidget from '@/components/ProductWidget.vue';
 import LoadingAnimation from '@/components/LoadingAnimation.vue';
+// products are at https://api.jsonbin.io/b/5ee6a8670e966a7aa3696b76
 
 export default {
   components: {
     ProductWidget,
     LoadingAnimation,
-  },
-  data() {
-    return {
-      loading: true,
-    };
-  },
-  async mounted() {
-    await this.fetchProducts();
-    this.loading = false;
-  },
-  computed: {
-    ...mapState({
-      products: 'products',
-    }),
-    productsWithAlignment() {
-      return this.products.map((product, index) => {
-        const isOdd = index % 2 !== 0;
-        return {
-          ...product,
-          alignRight: isOdd,
-        };
-      });
-    },
-  },
-  methods: {
-    ...mapActions({
-      fetchProducts: 'fetchProducts',
-    }),
   },
 };
 </script>
